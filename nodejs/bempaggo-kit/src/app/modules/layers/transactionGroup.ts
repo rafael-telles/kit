@@ -10,7 +10,9 @@ export interface TransactionGroup {
   price: {
     amount: number
     currency: 'BRL'
-  }
+  },
+
+  urlNotification: string|undefined
 
   /**
    * Payment Method used in this transaction group
@@ -32,6 +34,7 @@ export interface TransactionGroup {
 
     // How many installments this transaction should have on the gateway
     installments: number
+
 
     discounts: {
       kind: 'percent' | 'fixed'

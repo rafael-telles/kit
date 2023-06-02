@@ -1,0 +1,33 @@
+{
+  "payments": [
+    {
+      "operation_type": "auth_only",
+      "installments": 12,
+      "statement_descriptor": "xxxxx",
+      "card_token": "token do cartão gerado pelo checkout transparente",
+      "card_id": "identificador do cartão de um cliente.",
+      "card": {
+        "number": "4024007131429325",
+        "holder_name": "TONY STARK",
+        "holder_document": "00000000000",
+        "exp_month": 12,
+        "exp_year": 2035,
+        "cvv": "123",
+        "brand": "VISA"
+      },
+
+      "split": [
+       {
+          "amount": 500,
+          "sellerId": "2131231231",
+          "type": "flat"
+        },
+        {
+          "amount": 222,
+          "sellerId": "123213",
+          "type": "flat"
+        }
+      ]
+    }
+  ]
+}

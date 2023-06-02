@@ -1,0 +1,183 @@
+
+
+POST v2/charges/credit/card   SESC/DIGITAL-SPEED/CODE7
+
+POST v2/charges/credit/card/authorize                X
+POST v2/charges/{id}/credit/card/capture	         X
+
+
+POST v2/sellers/{sellerId}/orders
+
+POST v2/sellers/{sellerId}/orders/{id}/charges/credit/card/authorize
+POST v2/sellers/{sellerId}/orders/{id}/charges/{id}/credit/card/capture
+POST v2/sellers/{sellerId}/orders/{id}/charges/pix
+
+
+
+POST v2/sellers/{sellerId}/orders/pix
+POST v2/sellers/{sellerId}/orders/bank-slip
+
+POST v2/sellers/{sellerId}/orders/credit/card/authorize
+POST v2/sellers/{sellerId}/orders/{id}/credit/card/capture
+POST v2/sellers/{sellerId}/orders/multi/credit-cards-token/authorize
+POST v2/sellers/{sellerId}/orders/{orderId}/multi/credit/cards/capture
+
+
+GET v2/sellers/{sellerId}/orders/?referenceId=order_reference_id_01
+
+GET v2/sellers/{sellerId}/orders/{orderId}
+
+
+
+
+
+
+{
+	"referenceId": "order_reference_id_01",
+	"amount": 1035,
+	"customer": {
+		"name": "Douglas Hiura Longo Customer",
+		"email": "douglas@bempaggo.com.br",
+		"phone": {
+			"number": "988657196",
+			"areaCode": "48",
+			"contryCode": "55"
+		},
+		"birthdate": "1992-02-29",
+		"document": "06219385993",
+		"address": {
+			"street": "Rua dos bobos",
+			"lineTwo": "Casa 1",
+			"streetNumber": "45D",
+			"neighborhood": "Lagoa da Conceicao",
+			"city": "Florianopolis",
+			"state": "SC",
+			"zipCode": "88062201"
+		}
+	},
+	"splitMode":"DATABASE",
+	"payments": [
+		{
+			
+			"installments": 1,
+			"amount": 500,
+			"cardToken": {
+				"token": "0000000000001202002303023020302",
+				"cvv": "123"
+			},
+			"split": [
+				{
+				   "amount": 250,
+				   "sellerId": "2131231231",
+				  
+				 },
+				 {
+				   "amount": 250,
+				   "sellerId": "123213"
+				 }
+			   ]
+		},
+		{
+			"installments": 1,
+			"amount": 535,
+			"cardToken": {
+				"token": "0000000000001202002303023020302",
+				"cvv": "123"
+			},
+			"split": [
+				{
+				   "amount": 250,
+				   "sellerId": "2131231231"
+				 },
+				 {
+				   "amount": 285,
+				   "sellerId": "123213"
+				 }
+			   ]
+		}
+	]
+}
+
+;;;// ultimos casos so depois
+
+{
+	"referenceId": "order_reference_id_01",
+	"amount": 1035,
+	"customer": {
+		"name": "Douglas Hiuara Longo Customer",
+		"email": "douglas@bempaggo.com.br",
+		"phone": {
+			"number": "988657196",
+			"areaCode": "48",
+			"contryCode": "55"
+		},
+		"birthdate": "1992-02-29",
+		"document": "06219385993",
+		"address": {
+			"street": "Rua dos bobos",
+			"lineTwo": "Casa 1",
+			"streetNumber": "45D",
+			"neighborhood": "Lagoa da Conceicao",
+			"city": "Florianopolis",
+			"state": "SC",
+			"zipCode": "88062201"
+		}
+	},
+	"splitMode":"DATABASE",
+	"payments": [
+		{
+			
+			"installments": 1,
+			"amount": 500,
+			"card": {
+				"cardNumber": "0000000000001",
+				"cvv": "123",
+				"holder": {
+					"name": "Douglas Hiura Jura",
+					"document": "06219385993"
+				},
+				"expiration": {
+					"year": 2023,
+					"month": 1
+				}
+			},
+			"split": [
+				{
+				   "amount": 250,
+				   "sellerId": "2131231231",
+				  
+				 },
+				 {
+				   "amount": 250,
+				   "sellerId": "123213"
+				 }
+			   ]
+		},
+		{
+			"installments": 1,
+			"amount": 535,
+			"card": {
+				"cardNumber": "0000000000001",
+				"cvv": "123",
+				"holder": {
+					"name": "Douglas Hiura Jura",
+					"document": "06219385993"
+				},
+				"expiration": {
+					"year": 2023,
+					"month": 1
+				}
+			},
+			"split": [
+				{
+				   "amount": 250,
+				   "sellerId": "2131231231"
+				 },
+				 {
+				   "amount": 285,
+				   "sellerId": "123213"
+				 }
+			   ]
+		}
+	]
+}

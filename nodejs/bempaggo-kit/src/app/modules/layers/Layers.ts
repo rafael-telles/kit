@@ -54,8 +54,9 @@ class Layers {
             cardToken: token,
             value: transactionGroup.price.amount, // is this in cents?
             installments: transactionGroup.paymentMethod.installments,
-            yourReferenceId: Number(transactionGroup.code),
-            affiliateId: transactionGroup.sourceId as number
+            yourReferenceId: transactionGroup.code,
+            affiliateId: transactionGroup.sourceId as number,
+            notificationUrl: transactionGroup.notificationUrl 
             
         };
     }

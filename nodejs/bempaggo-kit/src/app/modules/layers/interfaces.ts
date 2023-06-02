@@ -2,7 +2,7 @@ import { ChargeStatusTypes } from "../entity/Enum";
 
 export interface BemPaggoTransaction {
   items: BemPaggoTransactionItem[];
-  payment: BemPaggoTransactionPaymentMethod;
+  payment: BemPaggoTransactionPaymentMethod[];
   referenceId: string;
   customer_id: string;
 
@@ -22,7 +22,8 @@ export type BemPaggoTransactionPaymentMethod =
 interface BemPaggoCreditCardPaymentMethod {
   payment_method: 'credit_card';
   amount: number;
-  recipient_id: string;
+  seller_id: string; // renaming
+  transaction_id: string; // adding
   credit_card: {
     card_id: string;
     operation_type: 'auth_only';
